@@ -28,11 +28,43 @@ button{
 }
 
 .board__item{
+   position: relative;
    background-color: #d3d3d3;
    border-radius: 5px;
    border: 2px solid #808080;
    transition: all .1s linear;
    cursor: pointer;
+}
+
+.board__item--filled-X::before,
+.board__item--filled-X::after{
+   position: absolute;
+   content: "";
+   height: 5px;
+   width: 100%;
+   top: 50%;
+   left: 0;
+   background-color: #8d1212;
+}
+
+.board__item--filled-X::before{
+   transform: translateY(-50%) rotate(-45deg);
+}
+
+.board__item--filled-X::after{
+   transform: translateY(-50%) rotate(45deg);
+}
+
+.board__item--filled-O::before{
+   position: absolute;
+   content: "";
+   border-radius: 50%;
+   border: 5px solid #0a0a88;
+   width: 80%;
+   height: 80%;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
 }
 
 .board__item:hover{
